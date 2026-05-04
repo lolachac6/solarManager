@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ventasComercialVsEmpresa" pageWidth="842" pageHeight="750" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="950598c0-287c-45ba-8579-66084bcc5c50">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ventasComercialVsEmpresa" pageWidth="900" pageHeight="750" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="950598c0-287c-45ba-8579-66084bcc5c50">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="70"/>
@@ -36,19 +36,10 @@
 		<band height="600">
 			<rectangle>
 				<reportElement x="0" y="0" width="1" height="1" uuid="666dce8d-bca6-4cc4-9983-46d083526e5c"/>
-			</rectangle>
-			<textField>
-				<reportElement x="100" y="78" width="637" height="50" forecolor="#FF0033" uuid="7f0d9fba-6225-4a15-8a36-60a56dd28a42">
-					<printWhenExpression><![CDATA[!$P{HAY_DATOS}]]></printWhenExpression>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="22" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Sin datos disponibles para este informe"]]></textFieldExpression>
-			</textField>
+			</rectangle>		
 			<pieChart>
 				<chart>
-					<reportElement x="1" y="14" width="870" height="1000" uuid="64981ff7-80b9-435a-bd34-53ba068792c0">
+					<reportElement x="1" y="14" width="870" height="550" uuid="64981ff7-80b9-435a-bd34-53ba068792c0">
 						<printWhenExpression><![CDATA[$P{HAY_DATOS}]]></printWhenExpression>
 					</reportElement>
 					<chartTitle/>
