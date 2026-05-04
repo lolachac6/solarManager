@@ -101,8 +101,7 @@ public class PantallaAltaPresupuestoController {
                     Presupuesto.EstadoPresupuesto.BORRADOR.name(),
                     Presupuesto.EstadoPresupuesto.ENVIADO.name(),
                     Presupuesto.EstadoPresupuesto.ACEPTADO.name(),
-                    Presupuesto.EstadoPresupuesto.RECHAZADO.name(),
-                    Presupuesto.EstadoPresupuesto.FACTURADO.name()
+                    Presupuesto.EstadoPresupuesto.RECHAZADO.name()
             );
         
 
