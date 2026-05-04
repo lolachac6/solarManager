@@ -1,0 +1,18 @@
+VALIDACION DE CAMBIOS DE VENTANAS
+
+Cambios realizados:
+- Se ha centralizado el comportamiento de navegación en utils.NavegacionSolarManager.
+- Las pantallas principales del ERP reutilizan el Stage actual y se muestran maximizadas con el marco de Windows visible.
+- Las ventanas de alta, modificación, detalle y cálculo se abren como ventanas modales asociadas a su ventana padre.
+- Las ventanas modales se abren con tamaño 1200 x 800, orientación horizontal.
+- Los botones de cancelar/volver en ventanas modales cierran únicamente la ventana modal, manteniendo viva la ventana padre.
+
+Validaciones realizadas en este entorno:
+- Validación de rutas getResource: OK.
+- Validación de fx:controller en FXML: OK.
+- Búsqueda de stageActual.close en navegación principal: OK, no quedan usos.
+- Búsqueda de Modality.APPLICATION_MODAL: OK, no quedan usos.
+- Búsqueda de setFullScreen(true): OK, no quedan usos.
+
+Limitación técnica:
+- No se puede ejecutar una prueba visual completa de JavaFX ni conexiones reales desde este entorno porque el proyecto está configurado para NetBeans Ant + JDK 8 y este entorno no dispone de JavaFX integrado en el JDK. La validación funcional final debe hacerse en NetBeans con JDK 8, ejecutando los flujos de abrir, guardar y cancelar de cada pantalla.

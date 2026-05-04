@@ -1,0 +1,27 @@
+VALIDACIÓN REALIZADA
+
+1. Coherencia de paquetes Java
+Resultado: OK
+Todos los ficheros .java tienen una declaración package coherente con su carpeta física.
+
+2. Controladores declarados en FXML
+Resultado: OK
+Todos los fx:controller declarados en los ficheros FXML apuntan a una clase existente en src.
+
+3. Rutas absolutas getResource detectables
+Resultado: OK
+Las rutas absolutas detectables en llamadas getResource/getResourceAsStream apuntan a recursos existentes dentro de src.
+
+4. Compilación de capa no visual principal
+Resultado: OK en el entorno disponible
+Se compiló la capa no visual principal: modelo, dao, db, mapper, integration, service parcial, report y utils/CifradoDatos.
+
+No se compiló la capa JavaFX completa en este entorno porque el JDK disponible no incluye JavaFX. El proyecto está configurado para Java 8, donde JavaFX forma parte del JDK utilizado en NetBeans.
+
+5. Pruebas unitarias
+Resultado: OK
+Se validaron 35 pruebas unitarias de modelo, service, mapper y utils mediante un runner auxiliar temporal compatible con las anotaciones de JUnit utilizadas.
+
+6. Conexiones reales a MongoDB, Supabase y Google
+Resultado: pendiente de validación en entorno local
+No se ejecutaron conexiones reales desde este entorno para evitar depender de red externa, disponibilidad de servicios, credenciales y configuración local. Las clases, paquetes e imports de integración se revisaron y se mantuvieron las claves y configuración existentes en el código del proyecto.

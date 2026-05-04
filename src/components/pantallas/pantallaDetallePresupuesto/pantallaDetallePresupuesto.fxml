@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0"
+            prefWidth="1000.0"
+            style="-fx-background-color:#f4f6f8;"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="components.pantallas.pantallaDetallePresupuesto.pantallaDetallePresupuestoController">
+
+    <children>
+        <VBox spacing="18" style="-fx-padding:20;"
+              AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+            <Label text="Detalle Presupuesto" style="-fx-font-size:24px; -fx-font-weight:bold;"/>
+
+            <GridPane hgap="15" vgap="12" VBox.vgrow="ALWAYS">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50.0"/>
+                    <ColumnConstraints percentWidth="50.0"/>
+                </columnConstraints>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="ID Presupuesto"/>
+                    <TextField fx:id="txtId" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="Cliente"/>
+                    <TextField fx:id="txtCliente" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="Paneles Solares"/>
+                    <TextField fx:id="txtPaneles" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="Estructura"/>
+                    <TextField fx:id="txtEstructura" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <Label text="Inversor"/>
+                    <TextField fx:id="txtInversor" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <Label text="Batería"/>
+                    <TextField fx:id="txtBateria" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <Label text="Material Eléctrico"/>
+                    <TextField fx:id="txtMaterialElectrico" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <Label text="Mano de Obra"/>
+                    <TextField fx:id="txtManoObra" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                    <Label text="Tramitación"/>
+                    <TextField fx:id="txtTramitacion" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <Label text="Subtotal"/>
+                    <TextField fx:id="txtSubtotal" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                    <Label text="IVA"/>
+                    <TextField fx:id="txtIva" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <Label text="Total"/>
+                    <TextField fx:id="txtTotal" editable="false" focusTraversable="false"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2">
+                    <Label text="Estado"/>
+                    <TextField fx:id="txtEstado" editable="false" focusTraversable="false"/>
+                </VBox>
+            </GridPane>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox spacing="5">
+                   
+                    <ComboBox fx:id="comboEstado" style="" />
+                    <Button fx:id="guardar" text="Guardar" onAction="#guardar"/>
+                </VBox>
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button text="Cerrar" onAction="#cerrar"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

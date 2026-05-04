@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane 
+    xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.pantallas.erp.pantallaInformes.PantallaInformesController">
+
+    <stylesheets>
+        <URL value="@plantillageneral.css" />
+    </stylesheets>
+
+    <children>
+
+        <BorderPane AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+            <!-- CABECERA -->
+            <top>
+                <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color:#f4f4f4; -fx-padding:10;">
+                    <Button fx:id="btnVolver" onAction="#volverInicio" text="← Volver" />
+                    <Label style="-fx-font-size:18px; -fx-font-weight:bold;" text="Solar Manager" />
+                    <Pane HBox.hgrow="ALWAYS" />
+                </HBox>
+            </top>
+
+            <!-- MENU LATERAL -->
+            <left>
+                <VBox fx:id="vboxMenu" alignment="TOP_CENTER" prefWidth="200" spacing="10" style="-fx-background-color:#e6e9ef; -fx-padding:85 15 15 15;                              -fx-border-color:#d0d0d0; -fx-border-width:2;                              -fx-background-radius:5; -fx-border-radius:5;">
+                    <BorderPane.margin>
+                        <Insets bottom="65" left="15" right="15" top="90" />
+                    </BorderPane.margin>
+
+                    <Label style="-fx-font-weight:bold;" text="Inicio" />
+
+                    <Button maxWidth="Infinity" onAction="#irClientes" styleClass="menu-button" text="Clientes" />
+                    <Button maxWidth="Infinity" onAction="#irComerciales" styleClass="menu-button" text="Comerciales" />
+                    <Button maxWidth="Infinity" onAction="#irProveedores" styleClass="menu-button" text="Proveedores" />
+                    <Button maxWidth="Infinity" onAction="#irStock" styleClass="menu-button" text="Stock" />
+                    <Button maxWidth="Infinity" onAction="#irPresupuestos" styleClass="menu-button" text="Presupuestos" />
+                    <Button maxWidth="Infinity" onAction="#irInstalaciones" styleClass="menu-button" text="Instalaciones" />
+                    <Button maxWidth="Infinity" onAction="#irInformes" styleClass="menu-button" text="Informes" />
+                </VBox>
+            </left>
+
+            <!-- CENTRO -->
+            <center>
+                <AnchorPane prefHeight="652.0" prefWidth="984.0">
+
+                    <Label layoutX="30.0" layoutY="25.0" text="Informes">
+                        <font>
+                            <Font name="System Bold" size="20.0" />
+                        </font>
+                    </Label>
+
+                    <!-- PANEL IZQUIERDO DE CONTROLES -->
+                    <VBox alignment="TOP_CENTER"
+                          spacing="15"
+                          prefWidth="200"
+                          prefHeight="400" 
+                          AnchorPane.topAnchor="80"
+                          AnchorPane.leftAnchor="25"
+                          AnchorPane.bottomAnchor="60"
+                          style="-fx-padding:20;
+                                    -fx-background-color:#e6e9ef;
+                                    -fx-border-color:#d0d0d0;
+                                    -fx-border-width:2;
+                                    -fx-background-radius:5;
+                                    -fx-border-radius:5;">
+                        
+                        
+                        <ComboBox fx:id="comboComerciales"
+                                  prefWidth="180"
+                                  promptText="Selecciona comercial"/>
+
+                        <Pane prefHeight="75"/>
+                        
+                        <Label style="-fx-font-weight:bold;" text="Informes por Comercial: " />
+                        <Button fx:id="btnInformeComercial"
+                                text="Informe Nº clientes"
+                                prefWidth="180"
+                                onAction="#onInformeComercial"/>
+
+                        <Button fx:id="btnVentasMes"
+                                text="Informe Nº ventas"
+                                prefWidth="180"
+                                onAction="#onVentasMes"/>
+
+                        <Button fx:id="btnRatioVentas"
+                                text="Ventas/Instalaciones"
+                                prefWidth="180"
+                                onAction="#onVentasVsEmpresa"/>
+                        
+                        <BorderPane.margin>
+                            <Insets bottom="100" left="15" right="15" top="90" />
+                        </BorderPane.margin>
+                        
+                        <Label style="-fx-font-weight:bold;" text="Informes generales:" />
+                        <Button fx:id="btnPresupuestos"
+                                text="Informe presupuestos"
+                                prefWidth="180"
+                                onAction="#onPresupuestos"
+                        />
+
+                    </VBox>
+
+                    <!-- PREVIEW DEL INFORME -->
+                    <StackPane fx:id="panelPreview"
+                               AnchorPane.topAnchor="80"
+                               AnchorPane.leftAnchor="270"
+                               AnchorPane.rightAnchor="25"
+                               AnchorPane.bottomAnchor="60"
+                               style="-fx-background-color:white;
+                          -fx-border-color:#ccc;
+                          -fx-border-width:10;
+                          -fx-border-radius:5;
+                          -fx-background-radius:5;" />
+
+                </AnchorPane>
+            </center>
+
+        </BorderPane>
+
+    </children>
+
+</AnchorPane>

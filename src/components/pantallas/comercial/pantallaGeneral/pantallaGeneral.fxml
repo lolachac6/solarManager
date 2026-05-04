@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0"
+            prefWidth="1200.0"
+            styleClass="mainFxmlClass"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="components.pantallas.comercial.pantallaGeneral.PantallaGeneralController">
+
+    <stylesheets>
+        <URL value="@plantillageneral.css"/>
+    </stylesheets>
+
+    <children>
+
+        <BorderPane AnchorPane.bottomAnchor="0"
+                    AnchorPane.leftAnchor="0"
+                    AnchorPane.rightAnchor="0"
+                    AnchorPane.topAnchor="0">
+
+            <top>
+                <HBox alignment="CENTER_LEFT"
+                      spacing="10"
+                      style="-fx-background-color:#f4f4f4; -fx-padding:10;">
+
+                    <Label text="Solar Manager"
+                           style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <fx:include source="/components/comun/header/Header.fxml"/>
+
+                </HBox>
+            </top>
+
+            <left>
+                <VBox alignment="TOP_CENTER"
+                      prefWidth="200"
+                      spacing="10"
+                      style="-fx-background-color:#e6e9ef; -fx-padding:85 15 15 15;">
+
+                    <Label text="Inicio"
+                           style="-fx-font-weight:bold;"/>
+
+                    <Button text="Clientes"
+                            maxWidth="Infinity"
+                            onAction="#mostrarClientes"/>
+
+                    <Button text="Instalaciones"
+                            maxWidth="Infinity"
+                            onAction="#mostrarInstalaciones"/>
+
+                    <Button text="Presupuestos"
+                            maxWidth="Infinity"
+                            onAction="#mostrarPresupuestos"/>
+
+                </VBox>
+            </left>
+
+            <center>
+                <VBox spacing="20" style="-fx-padding:20;">
+
+                    <Label text="Área Comercial"
+                           style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+                    <StackPane VBox.vgrow="ALWAYS">
+
+                        <GridPane alignment="CENTER"
+                                  hgap="80"
+                                  maxWidth="600">
+
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+                                <ColumnConstraints percentWidth="50" halignment="CENTER"/>
+                            </columnConstraints>
+
+                            <Button fx:id="btnClientes"  
+                                    styleClass="dashboard-button"
+                                    contentDisplay="TOP"
+                                    prefWidth="220"
+                                    prefHeight="220"
+                                    onAction="#abrirAltaCliente"
+                                    GridPane.columnIndex="0"/>
+
+                            <Button fx:id="btnInstalaciones"
+                                    styleClass="dashboard-button"
+                                    contentDisplay="TOP"
+                                    prefWidth="220"
+                                    prefHeight="220"
+                                    onAction="#abrirCalculoInstalacion"
+                                    GridPane.columnIndex="1"/>
+
+                        </GridPane>
+
+                    </StackPane>
+
+                    <AnchorPane fx:id="panelTabla"
+                                VBox.vgrow="ALWAYS"
+                                style="-fx-background-color:white;
+                                       -fx-border-color:#d0d0d0;
+                                       -fx-border-width:2;
+                                       -fx-border-radius:5;
+                                       -fx-background-radius:5;"/>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button fx:id="btnHacerPresupuesto"
+                                text="Hacer Presupuesto"
+                                visible="false"
+                                managed="false"
+                                onAction="#hacerPresupuesto"/>
+
+                        <Button fx:id="btnDetalle"
+                                text="Detalle"
+                                visible="false"
+                                managed="false"
+                                onAction="#abrirDetalle"/>
+                    </HBox>
+
+                </VBox>
+            </center>
+
+        </BorderPane>
+
+    </children>
+
+</AnchorPane>

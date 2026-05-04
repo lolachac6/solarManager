@@ -1,0 +1,27 @@
+Corrección aplicada al cálculo de inversor
+==========================================
+
+Problema detectado
+------------------
+El presupuesto podía no sumar el importe del inversor si el producto guardado en MongoDB no tenía exactamente el campo tipoProducto con el valor INVERSOR.
+
+En la pantalla de alta de producto se guardaba el tipo en el campo tipo. En cambio, parte del cálculo buscaba por tipoProducto. Aunque existía una comprobación secundaria, el mapeo no normalizaba variantes como Inversor, Inversor solar o nombres con espacios.
+
+También la pantalla de alta de presupuesto obtenía el importe visible del inversor buscando por nombreProducto que contuviera la palabra INVERSOR. Si el producto se llamaba, por ejemplo, Huawei SUN2000, la línea existía, pero el campo visual del inversor podía mostrar 0.00.
+
+Cambios realizados
+------------------
+1. ProductoMapper ahora normaliza el tipo de producto desde tipoProducto o tipo.
+2. ProductoDAO.obtenerPorTipo ahora localiza productos aunque estén guardados con tipo o tipoProducto y aunque el texto tenga variantes normalizables.
+3. PresupuestoService incorpora métodos para obtener importe y cantidad por tipo de producto a partir de las líneas calculadas.
+4. PantallaAltaPresupuestoController muestra el importe del inversor usando el tipo real del producto, no el nombre visible del producto.
+5. Se añadió ProductoMapperTest para validar el mapeo del tipo de producto.
+
+Archivos modificados
+--------------------
+src/mapper/ProductoMapper.java
+src/dao/ProductoDAO.java
+src/service/PresupuestoService.java
+src/components/pantallas/erp/pantallaAltaPresupuesto/PantallaAltaPresupuestoController.java
+test/mapper/ProductoMapperTest.java
+
