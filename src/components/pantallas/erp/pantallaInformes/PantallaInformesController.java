@@ -728,7 +728,7 @@ public class PantallaInformesController implements Initializable {
                     Filters.regex("estado", "^facturado$", "i")
             );
 
-            boolean hayDatos = instalacionesTotales > 0;
+            boolean hayDatos = (ventasComercial + instalacionesTotales) > 0;
 
         long total = instalacionesTotales == 0 ? 1 : instalacionesTotales;
 
@@ -746,12 +746,23 @@ public class PantallaInformesController implements Initializable {
         }
 
         {
+            long resto = instalacionesTotales - ventasComercial;
+            if (resto < 0) resto = 0;
             Map<String, Object> fila = new HashMap<>();
             fila.put("label", "Instalaciones Totales");
-            fila.put("valor", instalacionesTotales - ventasComercial);
+            fila.put("valor", resto);
             fila.put("porcentaje", "");
             lista.add(fila);
         }
+        
+        if (ventasComercial == 0 && instalacionesTotales == 0) {
+            Map<String, Object> filaDummy = new HashMap<>();
+            filaDummy.put("label", "Sin datos");
+            filaDummy.put("valor", 1);
+            filaDummy.put("porcentaje", "");
+            lista.add(filaDummy);
+        }   
+        
 
         Map<String, Object> params = new HashMap<>();
         params.put("COMERCIAL", nombreComercial);
